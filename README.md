@@ -39,3 +39,6 @@ A Variable can either be:
 &y = 10
 &z = &x
 ```
+
+Operations On Variables:
+**&**_VariableName_ __(+, -, *, /)__ Are all the basic 4 operators you will be using when making **.plr** scripts
