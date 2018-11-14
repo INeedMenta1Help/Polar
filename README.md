@@ -42,3 +42,21 @@ A Variable can either be:
 
 Operations On Variables:
 **&**_VariableName_ __(+, -, *, /)__ Are all the basic 4 operators you will be using when making **.plr** scripts
+
+These operators are used in the following manner:
+```
+&VariableName * $10
+&VariableName + &VariableName
+&VariableName - $5
+&VariableName / &VariableName
+```
+**IMPORTANT**
+_Using the variables in operations will change the original value,_
+_The original Value will not be saved as the variable is changed immediately._
+
+Log:
+This is a small command that outputs A variable, string, or number to the screen.
+Usage:
+`Log: &VariableName`
+
+END
