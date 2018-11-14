@@ -21,7 +21,8 @@ Its just one big **Overcomplicated** Calculator! x3
 Polar was created to be an easy entercne into programming, I designed the interpreter to be as forgiving as possible so that one small mistake does not completely break the entire program.
 
 ### **14/11/2018**
-First **Public** upload Polar
+First **Public** upload of Polar.
+
 basic syntax:
 Declaring Variables:
 **&**_VariableName_ = _VariableContents_
