@@ -10,7 +10,20 @@ log: &x
 log: $10
 log: "Hewwo, World!"
 
+#Operations
+&x * $2
+log: &x
+&z / &x
+log: &z
+
+&abc = $0
+&abc + $500
+&cba = $0
+&cba - $500
+log: &abc
+log: &cba
+
 #End Of Program
 #Bugs:
-	#Currently A Bug where if the end of the program is not either a "\n", ";" or " ", 
-	#The lexer fails to read the last item in the program
+#Currently A Bug where if the end of the program is not either a \n, ;, or SPACE, 
+#The lexer fails to read the last item in the program
