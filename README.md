@@ -13,7 +13,6 @@ python: https://www.python.org **AND** The .plr interpreter https://github.com/I
 - Write: `py plr.py filename` and Hit Enter
 
 ## **The Aim Of Polar**
-=======================
 Polar is a **variable** orientated Language.
 _What Does That Mean?_
 Its just one big **Overcomplicated** Calculator! x3
@@ -21,7 +20,6 @@ Its just one big **Overcomplicated** Calculator! x3
 Polar was created to be an easy entercne into programming, I designed the interpreter to be as forgiving as possible so that one small mistake does not completely break the entire program.
 
 ## **Updates**
-==============
 ### **14/11/2018**
 First **Public** upload of Polar.
 
