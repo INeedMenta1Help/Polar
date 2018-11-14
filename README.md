@@ -58,7 +58,7 @@ _The original Value will not be saved as the variable is changed immediately._
 
 
 Log:
-This is a small command that outputs A variable, string, or number to the screen.
+This is a small command that outputs A **variable**, **string**, or **number** to the screen.
 
 Usage:
 
