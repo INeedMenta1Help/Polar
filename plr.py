@@ -13,6 +13,17 @@ def findVar(name):
 	print(name + " Not Defined - 0 Instead Of Exception!")
 	return 0
 
+def changeVar(name, newVar):
+	changed = 0
+	for i in range(0, len(var)):
+		if name == var[i][0]:
+			var[i][1] = newVar
+			changed = 1
+			break
+
+	if changed == 0:
+		print("Unable to find Variable: " + name + "\nNo Variable was changed to avoid Exceptions")
+
 def lex():
 	toks = []
 	tok = ""
@@ -35,6 +46,8 @@ def lex():
 				string = not string
 			else:
 				tok += char
+
+
 	#print(toks)
 
 	lex2(toks)
@@ -47,22 +60,36 @@ def lex2(toks):
 			adtoks.append(["var", varname])
 
 		elif toks[i][0] == "$":
-			adtoks.append(["data", toks[i][1:]])
+			adtoks.append(["data", int(toks[i][1:])])
 
 		elif toks[i][0] == "\"":
-			adtoks.append(["string", toks[i][1:len(toks[i])-1]])
+			adtoks.append(["string", str(toks[i][1:len(toks[i])-1])])
 
 		elif toks[i] == "=":
 			adtoks.append(["declare", "="])
 
+#OPERATORS
 		elif toks[i] == "==":
 			adtoks.append(["op", "=="])
 
+		elif toks[i] == "*":
+			adtoks.append(["op", "*"])
+
+		elif toks[i] == "/":
+			adtoks.append(["op", "/"])
+
+		elif toks[i] == "+":
+			adtoks.append(["op", "+"])
+
+		elif toks[i] == "-":
+			adtoks.append(["op", "-"])
+
+#FUNCTIONS
 		elif toks[i] == "log:":
 			adtoks.append(["func", "log"])
 
 
-	#print(adtoks)
+	print(adtoks)
 	parse(adtoks)
 
 def parse(toks):
@@ -87,6 +114,54 @@ def parse(toks):
 					var.append([toks[i][1], 0])
 				i += 2
 
+			#OPERATIONS
+			elif toks[i+1][0] == "op":
+				if toks[i+1][1] == "*":
+					var1 = findVar(toks[i][1])
+					if toks[i+2][0] == "var":
+						var2 = findVar(toks[i+2][1])
+						changeVar(toks[i][1], var1 * var2)
+					elif toks[i+2][0] == "data":
+						var1 = var1 * toks[i+2][1]
+						changeVar(toks[i][1], var1)
+					else:
+						print("Invalid Operation on Variable: " + str(toks[i][1]) + ". \n" + str(toks[i][1]) + " Has Been kept the same to Avoid Exceptions")
+				elif toks[i+1][1] == "/":
+					var1 = findVar(toks[i][1])
+					if toks[i+2][0] == "var":
+						var2 = findVar(toks[i+2][1])
+						changeVar(toks[i][1], var1 / var2)
+					elif toks[i+2][0] == "data":
+						var1 = var1 / toks[i+2][1]
+						changeVar(toks[i][1], var1)
+					else:
+						print("Invalid Operation on Variable: " + str(toks[i][1]) + ". \n" + str(toks[i][1]) + " Has Been kept the same to Avoid Exceptions")
+				elif toks[i+1][1] == "+":
+					var1 = findVar(toks[i][1])
+					if toks[i+2][0] == "var":
+						var2 = findVar(toks[i+2][1])
+						changeVar(toks[i][1], var1 + var2)
+					elif toks[i+2][0] == "data":
+						var1 = var1 + toks[i+2][1]
+						changeVar(toks[i][1], var1)
+					else:
+						print("Invalid Operation on Variable: " + str(toks[i][1]) + ". \n" + str(toks[i][1]) + " Has Been kept the same to Avoid Exceptions")
+				elif toks[i+1][1] == "-":
+					var1 = findVar(toks[i][1])
+					if toks[i+2][0] == "var":
+						var2 = findVar(toks[i+2][1])
+						changeVar(toks[i][1], var1 - var2)
+					elif toks[i+2][0] == "data":
+						var1 = var1 - toks[i+2][1]
+						changeVar(toks[i][1], var1)
+					else:
+						print("Invalid Operation on Variable: " + str(toks[i][1]) + ". \n" + str(toks[i][1]) + " Has Been kept the same to Avoid Exceptions")
+
+
+				i += 2
+
+
+
 		elif toks[i][0] == "func":
 			if toks[i][1] == "log":
 				if toks[i+1][0] == "var":
@@ -95,11 +170,11 @@ def parse(toks):
 					print(toks[i+1][1])
 				i += 1
 
-		i+=1
+		i += 1
 
 lex()
 
 
 #print(file)
 #print(mem)
-#print(var)
+print(var)
