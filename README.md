@@ -26,6 +26,7 @@ Polar was created to be an easy way into programming, I designed the interpreter
 ### **14/11/2018**
 First **Public** upload of Polar.
 
+
 basic syntax:
 Declaring Variables:
 **&**_VariableName_ = _VariableContents_
@@ -39,6 +40,7 @@ A Variable can either be:
 &y = 10
 &z = &x
 ```
+
 
 Operations On Variables:
 **&**_VariableName_ __(+, -, *, /)__ Are all the basic 4 operators you will be using when making **.plr** scripts
@@ -54,9 +56,12 @@ These operators are used in the following manner:
 _Using the variables in operations will change the original value,_
 _The original Value will not be saved as the variable is changed immediately._
 
+
 Log:
 This is a small command that outputs A variable, string, or number to the screen.
+
 Usage:
+
 `Log: &VariableName`
 
 END
