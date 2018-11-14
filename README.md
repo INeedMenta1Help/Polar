@@ -26,11 +26,11 @@ basic syntax:
 Declaring Variables:
 **&**_VariableName_ = _VariableContents_
 A Variable can either be:
-...A String: "Hello, World"
-...Number: 10
-...Another Variable: **&**_VariableName_ _(However, When the original variable changes, this one stays the same.)_
-...Example:
-...```
+  - A String: "Hello, World"
+  - Number: 10
+  - Another Variable: **&**_VariableName_ _(However, When the original variable changes, this one stays the same.)_
+  - Example:
+```
 &x = "Hewwo, World!"
 &y = 10
 &z = &x
