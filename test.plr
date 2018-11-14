@@ -1,3 +1,16 @@
+#This Is A 1 Line Comment :)
+
+#Variable Declarations Below
 &x = $10
 &y = "Hello, World!"
 &z = &x
+
+#This is a Function To "print" something To The Screen
+log: &x
+log: $10
+log: "Hewwo, World!"
+
+#End Of Program
+#Bugs:
+	#Currently A Bug where if the end of the program is not either a "\n", ";" or " ", 
+	#The lexer fails to read the last item in the program
