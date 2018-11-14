@@ -20,7 +20,7 @@ _What Does That Mean?_
 Its just one big **Overcomplicated** Calculator! x3
 
 
-Polar was created to be an easy entercne into programming, I designed the interpreter to be as forgiving as possible so that one small mistake does not completely break the entire program.
+Polar was created to be an easy way into programming, I designed the interpreter to be as forgiving as possible so that one small mistake does not completely break the entire program.
 
 ## **Updates**
 ### **14/11/2018**
